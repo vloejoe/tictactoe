@@ -4,18 +4,30 @@ const StatusMessage = ({ winner, isXnext, squares }) => {
 
   const renderStatusMessage = () => {
     if (winner) {
-      return <div>Winner is {winner}</div>;
+      return <>Winner is {winner}</>;
     }
     if (!winner && noMovesLeft) {
-      return <div>O and X tied</div>;
+      return (
+        <>
+          <span className="text-orange">O</span> and
+          <span className="text-green"> X</span> tied
+        </>
+      );
     }
     if (!winner && !noMovesLeft) {
-      return <div>Next player is {nextPlayer}</div>;
+      return (
+        <>
+          Next player is{' '}
+          <span className={isXnext ? 'text-green' : 'text-orange'}>
+            {nextPlayer}
+          </span>
+        </>
+      );
     }
     return null;
   };
 
-  return <div>{renderStatusMessage()}</div>;
+  return <h2 className="status-message">{renderStatusMessage()}</h2>;
 };
 
 export default StatusMessage;
