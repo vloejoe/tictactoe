@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './style.scss';
 import Board from './component/Board';
-
 import { calculateWinner } from './component/winner';
 import StatusMessage from './component/StatusMessage';
 import History from './component/History';
@@ -14,7 +13,7 @@ function App() {
 
   const gamingBoard = history[currentMove];
 
-  const winner = calculateWinner(gamingBoard.squares);
+  const { winner, winningSquares } = calculateWinner(gamingBoard.squares);
 
   const handleSquareClick = clickedPosition => {
     if (gamingBoard.squares[clickedPosition] || winner) {
@@ -65,6 +64,7 @@ function App() {
       <Board
         squares={gamingBoard.squares}
         handleSquareClick={handleSquareClick}
+        winningSquares={winningSquares}
       />
 
       <h2>Current Game History</h2>
