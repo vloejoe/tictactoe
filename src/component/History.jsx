@@ -7,6 +7,9 @@ const History = ({ history, moveTo, currentMove }) => {
             <button
               type="button"
               className={`btn-move ${currentMove === index ? `active` : ''}`}
+              style={{
+                FontWeight: currentMove === index ? 'bold' : 'normal',
+              }}
               onClick={() => moveTo(index)}
             >
               {index === 0 ? 'Go to game start' : `Got to move #${index}`}
