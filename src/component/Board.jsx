@@ -9,6 +9,7 @@ const Board = ({ squares, handleSquareClick, winningSquares }) => {
         value={squares[position]}
         onClick={() => handleSquareClick(position)}
         isWinningSquare={isWinningSquare}
+        
       />
     );
   };
