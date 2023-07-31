@@ -61,6 +61,7 @@ function App() {
   return (
     <div className="app">
       <h1>TIC <span className='text-green'>TAC</span> TOE</h1>
+      
       <StatusMessage winner={winner} gamingBoard={gamingBoard} />
       <Board
         squares={gamingBoard.squares}
@@ -76,7 +77,10 @@ function App() {
         New game
       </button>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
+      <p>React tictactoe game, by <a href='mailto:contact@alainjoelamvane.fr' className='text-orange'>ajamvane</a>. <br></br> Social media <a href='https://bento.me/ajamvane' className='text-green'>links</a></p>
+    <div className='bg-balls' />
     </div>
+    
   );
 }
 
